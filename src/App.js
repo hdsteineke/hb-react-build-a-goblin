@@ -15,9 +15,9 @@ function App() {
 */
   const [allGoblins, setAllGoblins] = useState([{ name: 'Blinky', hp: 5, color: 'blue' }]);
   const [filteredGoblins, setFilteredGoblins] = useState(allGoblins);
-  const [goblinFormName, setGoblinFormName] = useState('');
+  const [goblinFormName, setGoblinFormName] = useState('Boss');
   const [goblinFormHP, setGoblinFormHP] = useState(1);
-  const [goblinFormColor, setGoblinFormColor] = useState('');
+  const [goblinFormColor, setGoblinFormColor] = useState('purple');
   const [filterQuery, setFilterQuery] = useState(['']);
   
   function submitGoblin(e) {
@@ -66,7 +66,15 @@ function App() {
   return (
     <div className="App">
       <div className='current-goblin quarter'>
-        
+        <Goblin goblin={{
+          name: goblinFormName,
+          hp: goblinFormHP,
+          color: goblinFormColor
+          /* 
+            use the goblin form state to make a goblin object and to display it. 
+            This will let the user see the current form state 
+          */
+        }} handleDeleteGoblin={handleDeleteGoblin}/>
       </div>
       <div className='goblin-filter quarter'>
         Filter Goblins
