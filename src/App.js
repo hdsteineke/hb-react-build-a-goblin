@@ -66,6 +66,16 @@ function App() {
   return (
     <div className="App">
       <div className='current-goblin quarter'>
+        <GoblinForm 
+          goblinFormName={goblinFormName}
+          setGoblinFormName={setGoblinFormName}
+          goblinFormHP={goblinFormHP}
+          setGoblinFormHP={setGoblinFormHP}
+          goblinFormColor={goblinFormColor}
+          setGoblinFormColor={setGoblinFormColor}
+          submitGoblin={submitGoblin}
+        />
+        
         <Goblin goblin={{
           name: goblinFormName,
           hp: goblinFormHP,
