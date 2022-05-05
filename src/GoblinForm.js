@@ -7,7 +7,7 @@ export default function GoblinForm(props) {
       Note that you don't need to define an anonymous function--you can just name the submitGoblin prop here and it will work.
       Take a minute to try and puzzle out why that is: how is this function different from other functions, 
       where you do need to create an anonymous function in the `onClick` or `onSubmit` spot? */}
-      <form className='goblin-form' onSubmit={((e) => props.submitGoblin(e.target.value))}>
+      <form className='goblin-form' onSubmit={props.submitGoblin}>
         <label>
             Name
           {/* onChange, use the prop setGoblinFormName to set the parent state */}
