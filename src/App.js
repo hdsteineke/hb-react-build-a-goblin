@@ -14,11 +14,10 @@ function App() {
       Color, which is how we track the user input for the current color of the goblin in the form
 */
   const [allGoblins, setAllGoblins] = useState([{ name: 'Blinky', hp: 5, color: 'blue' }]);
-  const [filteredGoblins, setFilteredGoblins] = useState(allGoblins);
+  const [filteredGoblins, setFilteredGoblins] = useState([]);
   const [goblinFormName, setGoblinFormName] = useState('Boss');
   const [goblinFormHP, setGoblinFormHP] = useState(1);
   const [goblinFormColor, setGoblinFormColor] = useState('orange');
-  // const [filterQuery, setFilterQuery] = useState(['']);
   
   function submitGoblin(e) {
     e.preventDefault();
@@ -94,7 +93,7 @@ function App() {
       </div>
 
       <GoblinList 
-        goblins={allGoblins} // this takes in an array of goblins. If the filteredGoblins has a length, use that array. Otherwise, use the allGoblins array 
+        goblins={filteredGoblins.length ? filteredGoblins : allGoblins} // this takes in an array of goblins. If the filteredGoblins has a length, use that array. Otherwise, use the allGoblins array 
         handleDeleteGoblin={handleDeleteGoblin} // note that the goblin list has access to the ability to delete
       />
     </div>
